@@ -1,0 +1,159 @@
+body {
+    height:100vh;
+    background: #e2e7ed;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.todo {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px 0;
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &__add {
+        position: relative;
+        display: flex;
+        flex-basis: 100%;
+        
+        input {
+            width: 100%;
+            height: 40px;
+            background: #fff;
+            padding: 5px 10px;
+            font: rem(15px, 18px) $gotham-light;
+            color: #000;
+        }
+        
+        .add-item {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 76px;
+            height: 40px;
+            background: #ccc;
+            font: rem(15px, 15px) $gotham-bold;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            transition: all .2s ease;
+            
+            &:hover {
+                background: #000;
+                color: #fff;
+            }
+        }
+    }
+    
+    &__list {
+        &__items {
+            display: flex;
+            flex-basis: 100%;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+    }
+    
+    &__item {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 0;
+        border-bottom: 1px solid #9CCC65;
+        border-top: 1px solid #9CCC65;
+        border-left: 4px solid #9CCC65;
+        position: relative;
+        height: 40px;
+        margin-bottom: 10px;
+        
+        &__number {
+            height: 40px;
+            width: 40px;
+            border-right: 1px solid #9CCC65;
+            
+            p {
+                font: rem(14px, 40px) $gotham-book;
+                color: #000;
+            }
+        }
+        
+        &__text {
+            padding-left: 10px;
+            
+            p {
+                font: rem(14px, 16px) $gotham-bold;
+                color: #000;
+                text-align: left;
+            }
+        }
+        
+        &__remove {
+            position: absolute;
+            right: 0;
+            top: -1px;
+            width: 40px;
+            height: 40px;
+            padding: 0 10px;
+            background: #FFAB91;
+            transition: all .2s ease;
+            cursor: pointer;
+            font: rem(14px, 16px) $bold;
+            color: #000;
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+            
+            &:before,
+            &:after {
+                content: '';
+                width: 24px;
+                height: 2px;
+                background: #000;
+                display: block;
+                position: absolute;
+                left: 8px;
+                top: 19px;
+                transition: all .2s ease;
+            }
+            
+            &:hover {
+                background: #FF8A65;
+                
+                &:before,
+                &:after {
+                    background: #fff;
+                }
+                
+                &:before {
+                    transform: rotate(-45deg);    
+                }
+
+                &:after {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+h2 {
+    font: rem(20px, 22px) $gotham-bold;
+    color: #232323;
+    padding-bottom: 10px;
+}
+
+
