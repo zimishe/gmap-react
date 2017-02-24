@@ -4,6 +4,8 @@
 import { showPlaces } from './../showPlaces'
 
 import { handleLocationError } from './handleErrors'
+import You from './../../../assets/img/morty.png'
+
 
 export function getUserLocation(map, google) {
     if (navigator.geolocation) {
@@ -20,7 +22,8 @@ export function getUserLocation(map, google) {
             let marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                title: 'Hello World!'
+                title: 'You are here',
+                icon: You
             });
 
             showPlaces(map, google, pos)

@@ -2,6 +2,7 @@
  * Created by eugene on 24.02.17.
  */
 import { getUserLocation } from './../actions/support/getUserLocation'
+import Icon from './../../assets/img/beer.png'
 
 export function initMap() {
     let map,
@@ -29,12 +30,14 @@ export function initMap() {
                     lat: latitude,
                     lng : longitude
                 };
+                
 
                 // eslint-disable-next-line
                 let marker = new google.maps.Marker({
                     position: coords,
                     map: map,
-                    title: 'You are here'
+                    title: 'Sorry :(',
+                    icon: Icon
                 });
 
                 map.setCenter(coords);
