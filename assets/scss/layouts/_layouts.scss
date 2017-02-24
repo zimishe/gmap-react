@@ -43,4 +43,32 @@ h2 {
     }
 }
 
+.place {
+    display: flex;
+    flex-wrap: wrap;
+    
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        flex-basis: 100%;
+        padding-right: 10px;
+    }
+    
+    h3 {
+        font: rem(14px, 14px) $gotham-bold;
+        color: #000;
+        padding-right: 15px;
+        text-align: left;
+    }
+    
+    h4 {
+        font: rem(14px, 11px) $gotham-book;
+        color: #232323;
+        text-align: left;
+    }
+    
+}
+
 

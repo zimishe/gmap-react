@@ -9,7 +9,7 @@ export function initMap() {
 
     map = new google.maps.Map(this.refs.map, {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 13
+        zoom: 14
     });
 
     let input = document.getElementById('search'),
@@ -34,7 +34,7 @@ export function initMap() {
                 let marker = new google.maps.Marker({
                     position: coords,
                     map: map,
-                    title: 'Hello World!'
+                    title: 'You are here'
                 });
 
                 map.setCenter(coords);
