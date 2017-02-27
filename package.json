@@ -2,6 +2,7 @@
   "name": "gmaps-react.loc",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zimishe.github.io/gmap-react/build",
   "devDependencies": {
     "react-scripts": "0.9.0"
   },
