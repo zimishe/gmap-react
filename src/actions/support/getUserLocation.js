@@ -2,6 +2,7 @@
  * Created by eugene on 24.02.17.
  */
 import { showPlaces } from './../showPlaces'
+import { dragMarker } from './markerDrag'
 
 import { handleLocationError } from './handleErrors'
 import You from './../../../assets/img/morty.png'
@@ -19,14 +20,15 @@ export function getUserLocation(map, google) {
             map.setCenter(pos);
 
             // eslint-disable-next-line
-            let marker = new google.maps.Marker({
+            let yourMarker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: 'You are here',
-                icon: You
+                icon: You,
+                draggable: true
             });
 
-            showPlaces(map, google, pos)
+            showPlaces(map, google, pos, yourMarker);
             
         }, function() {
             handleLocationError(true, map.getCenter());

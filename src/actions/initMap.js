@@ -2,11 +2,13 @@
  * Created by eugene on 24.02.17.
  */
 import { getUserLocation } from './../actions/support/getUserLocation'
-import Icon from './../../assets/img/beer.png'
+import { showPlaces } from './showPlaces'
+import Icon from './../../assets/img/morty.png'
 
 export function initMap() {
     let map,
-        google = window.google;
+        google = window.google,
+        markers = [];
 
     map = new google.maps.Map(this.refs.map, {
         center: {lat: -34.397, lng: 150.644},
@@ -31,20 +33,23 @@ export function initMap() {
                     lng : longitude
                 };
                 
-
                 // eslint-disable-next-line
-                let marker = new google.maps.Marker({
+                let yourMarker = new google.maps.Marker({
                     position: coords,
                     map: map,
-                    title: 'Sorry :(',
-                    icon: Icon
+                    title: 'You are here',
+                    icon: Icon,
+                    animation: google.maps.Animation.DROP,
+                    draggable: true
                 });
-
+                
+                showPlaces(map, google, coords, yourMarker);
+                
                 map.setCenter(coords);
             }
         });
     });
     //  ==========
     
-    getUserLocation(map, google);
+    getUserLocation(map, google, markers);
 }

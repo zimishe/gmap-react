@@ -6,11 +6,8 @@ import initialState from './../store/initialState'
 
 let reducer = function reducer(state = initialState, action) {
     switch (action.type) {
-        case 'ADDED_ITEM' : return {
-            addedItems: action.addedItems
-        };
-        case 'REMOVED_ITEM' : return {
-            addedItems: action.addedItems
+        case 'PLACE_CHANGED' :return {
+            markers: action.markers
         };
 
         default : return state
